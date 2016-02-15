@@ -1,0 +1,5 @@
+<form action="/emboss/new/{{media_type}}/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>

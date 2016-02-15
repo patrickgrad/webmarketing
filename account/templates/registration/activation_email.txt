@@ -1,0 +1,5 @@
+Welcome to the UMS family!
+
+To activate your account please click here.
+
+{{activation_key}}

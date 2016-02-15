@@ -1,0 +1,5 @@
+<ul>
+    {% for app in applist %}
+        <li><a href="/{{ app.url }}/">{{ app.human_name }}</a></li>
+    {% endfor %}
+    </ul>

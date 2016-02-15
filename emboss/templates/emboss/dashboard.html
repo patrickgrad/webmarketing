@@ -1,0 +1,294 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block title %}Emboss{% endblock %}
+
+{%block productLink %}/emboss/{% endblock %}
+
+{%block productName %}<i class="glyphicon glyphicon-text-size" style="color:#8BC34A;"></i> Emboss <small style="color:#d2d2d2">data driven document generation</small>{% endblock %}
+
+{% block header %}
+
+<header class="page-header">
+            <div class="navbar">
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" title="8 support tickets"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown">
+                            <i class="fa fa-bell"></i>
+                            <span class="count">8</span>
+                        </a>
+                        <ul id="support-menu" class="dropdown-menu support" role="menu">
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="fa fa-bell-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        Check out this awesome ticket
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-warning"><i class="fa fa-question-circle"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        "What is the best way to get ...
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-success"><i class="fa fa-tag"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        This is just a simple notification
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-info"><i class="fa fa-info-circle"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        12 new orders has arrived today
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        One more thing that just happened
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="text-align-center see-all">
+                                    See all tickets <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs dropdown">
+                        <a href="#" title="Account" id="account"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation">
+                                <a href="form_account.html" class="link">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="component_calendar.html" class="link">
+                                    <i class="fa fa-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="link">
+                                    <i class="fa fa-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="#" id="settings"
+                           title="Settings"
+                           data-toggle="popover"
+                           data-placement="bottom">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="#"
+                           class="btn-navbar"
+                           data-toggle="collapse"
+                           data-target=".sidebar"
+                           title="">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs"><a href="/accounts/logout/"><i class="fa fa-sign-out"></i></a></li>
+                </ul>
+                <!--<form id="search-form" class="navbar-form pull-right" role="search">
+                    <input type="search" class="form-control search-query" placeholder="Search...">
+                </form>-->
+            </div>
+        </header>     
+
+{% endblock %}
+
+{% block content %}
+
+<section class="widget">
+                    <header>
+                        <h4>
+                            Visits
+                            <small>
+                                One month rolling data
+                            </small>
+                        </h4>
+                        <div class="widget-controls">
+                            <a title="Options" href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                        </div>
+                    </header>
+                    <div class="body no-margin">
+                        <div id="visits-chart" class="chart visits-chart">
+                            <svg></svg>
+                        </div>
+                        <div class="visits-info well well-sm">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="fa fa-users"></i> Total Traffic</div>
+                                    <div class="value">24 541 <i class="fa fa-caret-up color-green"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="fa fa-bolt"></i> Unique Visits</div>
+                                    <div class="value">14 778 <i class="fa fa-caret-down color-red"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="fa fa-plus-square"></i> Revenue</div>
+                                    <div class="value">$3 583.18 <i class="fa fa-caret-up color-green"></i></div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="key"><i class="fa fa-user"></i> Total Sales</div>
+                                    <div class="value">$59 871.12 <i class="fa fa-caret-down color-red"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+{% if latest_media_list %}
+    {% for media in latest_media_list %}
+    {% with c=iterator.next %} 
+    <div class="col-md-3" style="padding-left:{% if c == 0 %}0{% else %}15{% endif %}px; padding-right:{% if c == latest_media_list|length|add:"-1" %}0{% else %}15{% endif %}px;">
+    	<section class="widget">
+    	<header>
+             <h4>
+				<a href="/emboss/detail/{{ media.id }}/" style="font-weight: 500;">{{ media.name|truncatechars:22}}</a>
+				<div class="value">CTR: 541 <i class="fa fa-caret-up color-green"></i> <span style="float:right;">Instances: 541 <i class="fa fa-caret-up color-red"></i></span></div>
+			</h4>
+			<div class="widget-controls">
+                            <a title="Edit" href="/emboss/edit/{{ media.id }}/"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a title="Detail" href="/emboss/detail/{{ media.id }}/"><i class="glyphicon glyphicon-list-alt"></i></a>
+            </div>
+		</header>
+		<div class="body no-margin">
+		</div>
+		</section>
+	</div>
+	{% endwith %}
+    {% endfor %}
+    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+    	<section class="widget" style="text-align:center;">
+    		<h4><a href="/emboss/new/" style="font-weight: 400;" ><i class="glyphicon glyphicon-plus"></i> New Media</a></h4>
+    	</section>
+	</div>
+{% else %}
+    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+    	<section class="widget" style="text-align:center;">
+    		<h4><a href="/emboss/new/" style="font-weight: 400;"><i class="glyphicon glyphicon-plus"></i> New Media</a></h4>
+    	</section>
+	</div>
+{% endif %}
+<div class="col-md-12 alert alert-warning" id="app-alert" style="text-align:center;">
+        <a href="/emboss/docs/" style="color:white; ">Get up and running with our 5 minute quick start guide</a>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+        <nav id="sidebar" class="sidebar nav-collapse collapse">
+            <ul id="side-nav" class="side-nav">
+                <li class="active">
+                    <a href="/emboss/"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
+                </li>
+                <li class="panel">
+                    <a href="/emboss/"><i class="fa fa-globe"></i> <span class="name">Campaign</span></a>
+                </li>
+                <li class="panel">
+                    <a href="/emboss/"><i class="fa fa-area-chart"></i> <span class="name">Statistics</span></a>
+                </li>
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                       data-parent="#side-nav" href="#stats-collapse"><i class="fa fa-plus"></i> <span class="name">Create</span></a>
+                    <ul id="stats-collapse" class="panel-collapse collapse ">
+                        <li class=""><a href="/emboss/new/0/">Coupon</a></li>
+                        <li class=""><a href="/emboss/new/1/">Ticket</a></li>
+                        <li class=""><a href="/emboss/new/2/">Invoice</a></li>
+                    </ul>
+                </li>
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                       data-parent="#side-nav" href="#view-collapse"><i class="fa fa-list-alt"></i> <span class="name">Media</span></a>
+                    <ul id="view-collapse" class="panel-collapse collapse ">
+
+                    	{% if all_media_list %}
+					    {% for media in all_media_list %}
+					        <li class=""><a href="/emboss/detail/{{ media.id }}/">{{ media.name }}</a></li>
+					    {% endfor %}
+						{% else %}
+							<li class=""><a href="/emboss/new/">Create new media</a></li>
+						{% endif %}
+
+                    </ul>
+                </li>
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                       data-parent="#side-nav" href="#edit-collapse"><i class="fa fa-edit"></i> <span class="name">Edit</span></a>
+                    <ul id="edit-collapse" class="panel-collapse collapse ">
+
+                    	{% if all_media_list %}
+					    {% for media in all_media_list %}
+					        <li class=""><a href="/emboss/edit/{{ media.id }}/">{{ media.name }}</a></li>
+					    {% endfor %}
+						{% else %}
+							<li class=""><a href="/emboss/new/">Create new media</a></li>
+						{% endif %}
+
+                    </ul>
+                </li>
+                {% if archive_media_list %}
+                <li class="panel ">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse"
+                       data-parent="#side-nav" href="#archive-collapse"><i class="fa fa-briefcase"></i> <span class="name">Archive</span></a>
+                    <ul id="archive-collapse" class="panel-collapse collapse ">
+					    {% for media in archive_media_list %}
+					        <li class=""><a href="/emboss/detail/{{ media.id }}/">{{ media.name }}</a></li>
+					    {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+        </nav> 
+    {% endblock %}
+
+ {% block scripts %}
+
+         <script src="{% static "lib/slimScroll/jquery.slimscroll.min.js" %}"></script>
+        <script src="{% static "lib/jquery.sparkline/index.js" %}"></script>
+
+        <script src="{% static "lib/backbone/backbone.js" %}"></script>
+        <script src="{% static "lib/backbone.localStorage/backbone.localStorage-min.js" %}"></script>
+
+        <script src="{% static "lib/d3/d3.min.js" %}"></script>
+        <script src="{% static "lib/nvd3/build/nv.d3.min.js" %}"></script>
+
+        <!-- page application js -->
+        <script src="{% static "js/index.js" %}"></script>
+
+ {% endblock %}
